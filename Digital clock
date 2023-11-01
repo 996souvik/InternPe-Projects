@@ -1,0 +1,24 @@
+import time
+from tkinter import * #import modules 
+
+root = Tk() #make a window
+
+root.geometry("359x150+0+0")
+
+root.configure(background="black") #select a background 
+root.resizable(0,0) #make it non resizable 
+
+root.overrideredirect(1)
+#define a function 
+def start():
+    text = time.strftime("%H:%M:%S") #strf is used for time 
+    Label.config(text=text)
+    Label.after(200,start)
+
+Label = Label(root,font=("ds-digital",50,'bold'),bg='black',fg='red' ,bd=50) #define the font and bg color and downsload ds-digital font
+Label.grid(row=0,column=1)
+start()
+print("done")
+root.mainloop()
+
+#Now Boom
